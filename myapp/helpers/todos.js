@@ -3,6 +3,7 @@ var db = require('../models');
 exports.getTodos = function(req, res) {
 	db.Todo.find()
 		.then(function(todos) {
+			console.log(res);
 			res.json(todos);
 		})
 		.catch(function(err) {
