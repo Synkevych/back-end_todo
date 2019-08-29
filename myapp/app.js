@@ -12,7 +12,6 @@ app.use(express.static('public'));
 
 app.get('/', function(req, res) {
 	res.sendFile('index.html');
-	console.log('done');
 });
 
 app.use('/api/todos', todoRoutes);
