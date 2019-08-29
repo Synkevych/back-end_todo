@@ -6,14 +6,17 @@ var express = require('express'),
 var todoRoutes = require('./routes/todos');
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('views'));
+app.use(express.static('public'));
 
 app.get('/', function(req, res) {
-	res.send('Root Route');
+	res.sendFile('index.html');
+	console.log('done');
 });
 
 app.use('/api/todos', todoRoutes);
 
 app.listen(port, function() {
-	console.log('App is running on port', port);
+	console.log('App is running on port:', port);
 });

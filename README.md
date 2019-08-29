@@ -11,9 +11,19 @@ node app.js
 - *PUT*		/api/todo/:todoId 	Update a todo
 - *DELETE*	/api/todo/:todoId	Delete a todo
 
-## Create snippet to run mongod 
+### Create snippet to run mongod 
 add to .bash_profile 
 export PATH="/Users/sunkevu4/mongodb/bin:${PATH}"
 
-## What res.send has
-res.send = res.json == json code 
+### What res.send has
+res.send = res.json == json code
+
+### Use Nodemon to restart server when code changed
+To install Nodemon global run command: 
+```
+npm install -g nodemon
+```
+To use run:
+```
+nodemon app.js
+```
